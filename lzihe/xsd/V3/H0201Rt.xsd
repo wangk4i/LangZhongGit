@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" targetNamespace="urn:hl7-org:v3" xmlns:mstns="urn:hl7-org:v3" xmlns="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="id">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="item" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="root" form="unqualified" type="xs:string" />
+      <xs:attribute name="extension" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="device">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+      <xs:attribute name="determinerCode" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="part" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="value" form="unqualified" type="xs:string" />
+            <xs:attribute name="type" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="displayName" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="root" form="unqualified" type="xs:string" />
+      <xs:attribute name="extension" form="unqualified" type="xs:string" />
+      <xs:attribute name="value" form="unqualified" type="xs:string" />
+      <xs:attribute name="code" form="unqualified" type="xs:string" />
+      <xs:attribute name="codeSystem" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="statusCode">
+    <xs:complexType>
+      <xs:attribute name="code" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="displayName">
+    <xs:complexType>
+      <xs:attribute name="value" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="item" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="telecom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="item" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contactParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="code">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="displayName" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="code" form="unqualified" type="xs:string" />
+      <xs:attribute name="codeSystem" form="unqualified" type="xs:string" />
+      <xs:attribute name="codeSystemName" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="beneficiary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="code" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="beneficiary" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+      <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PRPA_IN201311UV02">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="processingModeCode" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+        <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="creationTime" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="value" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="interactionId" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="root" form="unqualified" type="xs:string" />
+            <xs:attribute name="extension" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="processingCode" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="code" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="acceptAckCode" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="code" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="receiver" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="device" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sender" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="device" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="controlActProcess" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="subject" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="registrationRequest" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="statusCode" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element name="subject1" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="patient" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+                                      <xs:element ref="statusCode" minOccurs="0" maxOccurs="unbounded" />
+                                      <xs:element name="effectiveTime" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="any" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:attribute name="value" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="patientPerson" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+                                            <xs:element name="idCategory" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="displayName" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                                <xs:attribute name="code" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="codeSystem" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="codeSystemName" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element ref="name" minOccurs="0" maxOccurs="unbounded" />
+                                            <xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded" />
+                                            <xs:element name="administrativeGenderCode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="displayName" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                                <xs:attribute name="code" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="codeSystem" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="birthTime" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:attribute name="value" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="addr" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="item" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="maritalStatusCode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="displayName" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                                <xs:attribute name="code" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="codeSystem" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ethnicGroupCode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="item" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="asEmployee" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="occupationCode" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element ref="displayName" minOccurs="0" maxOccurs="unbounded" />
+                                                      </xs:sequence>
+                                                      <xs:attribute name="code" form="unqualified" type="xs:string" />
+                                                      <xs:attribute name="codeSystem" form="unqualified" type="xs:string" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="employerOrganization" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element ref="name" minOccurs="0" maxOccurs="unbounded" />
+                                                        <xs:element ref="contactParty" minOccurs="0" maxOccurs="unbounded" />
+                                                      </xs:sequence>
+                                                      <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                                      <xs:attribute name="determinerCode" form="unqualified" type="xs:string" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="asOtherIDs" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+                                                  <xs:element name="scopingOrganization" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+                                                      </xs:sequence>
+                                                      <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                                      <xs:attribute name="determinerCode" form="unqualified" type="xs:string" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="personalRelationship" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="code" minOccurs="0" maxOccurs="unbounded" />
+                                                  <xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded" />
+                                                  <xs:element name="relationshipHolder1" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element ref="name" minOccurs="0" maxOccurs="unbounded" />
+                                                      </xs:sequence>
+                                                      <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                                      <xs:attribute name="determinerCode" form="unqualified" type="xs:string" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="providerOrganization" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+                                            <xs:element ref="name" minOccurs="0" maxOccurs="unbounded" />
+                                            <xs:element ref="contactParty" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                          <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="determinerCode" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="coveredPartyOf" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="coverageRecord" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="beneficiary" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                                <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                                <xs:attribute name="moodCode" form="unqualified" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="author" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assignedEntity" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="id" minOccurs="0" maxOccurs="unbounded" />
+                                      <xs:element name="assignedPerson" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="name" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                          <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                          <xs:attribute name="determinerCode" form="unqualified" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+                        <xs:attribute name="moodCode" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="typeCode" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="classCode" form="unqualified" type="xs:string" />
+            <xs:attribute name="moodCode" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ITSVersion" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="id" />
+        <xs:element ref="device" />
+        <xs:element ref="item" />
+        <xs:element ref="statusCode" />
+        <xs:element ref="displayName" />
+        <xs:element ref="name" />
+        <xs:element ref="telecom" />
+        <xs:element ref="contactParty" />
+        <xs:element ref="code" />
+        <xs:element ref="beneficiary" />
+        <xs:element ref="PRPA_IN201311UV02" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

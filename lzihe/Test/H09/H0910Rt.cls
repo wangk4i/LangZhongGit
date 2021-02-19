@@ -1,0 +1,83 @@
+Class IHE.Test.H09.H0910Rt Extends %RegisteredObject [ Language = objectscript ]
+{
+
+ClassMethod GetTestData() As %String
+{
+	s msg = ##class(IHE.Msg.H09.H0910Rt).%New()
+	
+    s msg.MsgID = "消息ID"
+    s msg.CreateTime = "消息创建时间"
+    s msg.AppInfoID = "申请单号"
+    s msg.AppInfoDetail = "申请单详细信息"
+    s msg.AppTime = "申请日期时间"
+    s msg.PriorityCode = "优先（紧急）度代码"
+    s msg.PriorityName = "优先（紧急）度描述"
+    s msg.AuthorTime = "开单时间"
+    s msg.AuthorID = "开单医生工号"
+    s msg.AuthorName = "开单医生姓名"
+    s msg.AuthorDeptCode = "申请科室编码"
+    s msg.AuthorDeptName = "申请科室名称"
+    s msg.AuditTime = "审核日期时间"
+    s msg.AuditUserWorkNo = "审核者工号"
+    s msg.AuditUserName = "审核者姓名"
+    s msg.PatientABOCode = "患者ABO血型代码"
+    s msg.PatientABODescribe = "患者ABO血型描述"
+    s msg.PatientRHCode = "患者RH血型代码"
+    s msg.PatientRHDescribe = "患者RH血型描述"
+    s msg.PatientHeight = "患者身高"
+    s msg.PatientWeight = "患者体重"
+    s msg.PatientSystolicPressure = "患者收缩压"
+    s msg.PatientDiastolicPressure = "患者舒张压"
+    s msg.PatientTemperature = "患者体温"
+    s msg.PatientPulse = "患者脉搏"
+    s msg.ApplyABOCode = "申请ABO血型代码"
+    s msg.ApplyABODescribe = "申请ABO血型描述"
+    s msg.ApplyRHCode = "申请RH血型代码"
+    s msg.ApplyRHDescribe = "申请RH血型描述"
+    s msg.BloodCollectionMark = "采血标记"
+    s msg.BloodTransfusionSite = "输血地点"
+    s msg.BloodTransfusionPurpose = "输血目的"
+    s msg.BloodTransfusionNature = "输血性质"
+    s msg.BloodTransfusionMark = "输血紧急标志"
+    s msg.MedicalHistoryInfo = "病史信息"
+    s msg.BloodTransfusionHistory = "输血史"
+    s msg.BloodTransfusionReactionHistory = "输血反应史"
+    s msg.DrugAllergyHistory = "药物过敏史"
+    s msg.PregnanciesNumber = "孕次"
+    s msg.BirthsNumber = "产次"
+    s msg.OtherMedicalHistory = "其他重要病史"
+    s msg.Notices = "备注"
+    s msg.BloodVolumeUnit = "血量单位"
+    s msg.BloodVolume = "血量"
+    s msg.VisitNum = "就诊次数"
+    s msg.AdmID = "就诊流水号"
+    s msg.AdmTypeCode = "就诊类别编码"
+    s msg.AdmTypeName = "就诊类别名称"
+    s msg.DomainId = "域ID"
+    s msg.PatientID = "患者ID"
+    s msg.OutpatientId = "门（急）诊号"
+    s msg.HospitalizationId = "住院号"
+    s msg.IDCardNo = "患者身份证号"
+    s msg.MedicalInsuranceCard = "医保卡号"
+    s msg.PatientName = "患者姓名"
+    s msg.PatientTelecom = "患者电话"
+    s msg.GenderCode = "性别代码"
+    s msg.BirthTime = "出生日期"
+    s msg.PatientAge = "年龄"
+    s msg.PatientAddr = "地址"
+    s msg.BedCode = "病床编码"
+    s msg.BedNumber = "病床号"
+    s msg.RoomCode = "病房编号"
+    s msg.RoomNumber = "病房号"
+    s msg.DeptCode = "科室编码"
+    s msg.DeptName = "科室名称"
+    s msg.InpatientAreaId = "病区编码"
+    s msg.InpatientAreaName = "病区名称"
+  
+
+    d msg.XMLExportToString(.xmlStr, $p($ClassName(),".",4))
+    w !,xmlStr
+    q xmlStr
+}
+
+}
